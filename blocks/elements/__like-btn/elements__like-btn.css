@@ -2,7 +2,7 @@
     width: 22px;
     height: 19px;
     background-color: transparent;
-    background-image: url(/image/like.svg);
+    background-image: url('../image/like.svg');
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
