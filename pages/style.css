@@ -1,3 +1,6 @@
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
 .profile__add-btn {
     width: 150px;
     height: 50px;
