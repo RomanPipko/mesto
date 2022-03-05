@@ -3,7 +3,7 @@
     height: 24px;
     background-color: transparent;
     border: 1px solid #FFFFFF;
-    background-image: url(/image/pen.svg);
+    background-image: url(../../../image/pen.svg);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
