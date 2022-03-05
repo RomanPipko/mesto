@@ -8,6 +8,7 @@
     cursor: pointer;
     border: none;
     transition: 0.2s;
+    padding: 0;
 }
 .elements__like-btn:hover {
     opacity: 0.5;
