@@ -3,9 +3,10 @@
     height: 50px;
     background-color: transparent;
     border: 2px solid #FFFFFF;
-    background-image: url(../../../image/plus.svg);
+    background-image: url(../../../images/plus.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 22px;
     cursor: pointer;
     transition: 0.2s;
     border-radius: 2px;
@@ -21,9 +22,10 @@
     .profile__add-btn {
         min-width: 282px;
         margin: 36px 0;
+        background-size: 16px;
     }
 }
 .profile__add-btn:hover {
-    opacity: 0.5;
+    opacity: 0.6;
     transition: 0.2s;
 }
