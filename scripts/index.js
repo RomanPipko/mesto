@@ -56,10 +56,6 @@ const linkInput = document.querySelector('.popup__input_type_link');
 const elemetsList = document.querySelector('.elements__list');
 const cardTemplate = document.querySelector('#element-template').content;
 
-
-
-
-
   // отображение исходных карточек
 function renderInitialCard(arr) {
   const card = cardTemplate.querySelector('.elements__item').cloneNode(true);
@@ -73,10 +69,10 @@ function renderInitialCard(arr) {
   })
   const cardImage = card.querySelector('.elements__photo');
   cardImage.addEventListener('click', function() {
-    openPopup(imagePopup);
   imagePopup.querySelector('.popup__image-title').textContent = card.querySelector('.elements__title').textContent
   imagePopup.querySelector('.popup__image').src = card.querySelector('.elements__photo').src
   imagePopup.querySelector('.popup__image').alt = card.querySelector('.elements__title').textContent
+  openImage()
   });
   elemetsList.appendChild(card);
 }
@@ -128,16 +124,16 @@ function createCard (linkInput, placeNameInput) {
   })
   const cardImage = card.querySelector('.elements__photo');
   cardImage.addEventListener('click', function() {
-    openPopup(imagePopup);
   imagePopup.querySelector('.popup__image-title').textContent = card.querySelector('.elements__title').textContent
   imagePopup.querySelector('.popup__image').src = card.querySelector('.elements__photo').src
   imagePopup.querySelector('.popup__image').alt = card.querySelector('.elements__title').textContent
+  openImage();
   });
   return card;
   };
 
  // функция отбражения созданой карточки 
-function render() {
+function renderCard() {
   const card = createCard(linkInput, placeNameInput);
   elemetsList.prepend(card);
 }
@@ -148,7 +144,7 @@ function addCardSubmit(evt) {
   const link = linkInput.value;
   const cardData = {placeName, link};
   closePopup(cardPopup);
-  render(cardData);
+  renderCard(cardData);
 }
 
 
@@ -170,6 +166,7 @@ profilePopupCloseBtn.addEventListener('click', () => {
 cardPopupCloseBtn.addEventListener('click', () => {
   closePopup(cardPopup);
 });
+// закрытие попапа картинки кликом на крестик
 imagePopupCloseBtn.addEventListener('click', () => {
   closePopup(imagePopup)
 });
@@ -178,13 +175,6 @@ imagePopupCloseBtn.addEventListener('click', () => {
 
 
 
-// const closePopupByClickOnOverlay = function (Event) {
-//     if (Event.target !== Event.currentTarget) {
-//         return;
-//     }
-//     closePopup();
-// }
-// popup.addEventListener('click', closePopupByClickOnOverlay);
 
 
 
