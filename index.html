@@ -51,11 +51,11 @@
                 <form class="popup__form popup__form_type_profile" name="userInfo" novalidate>
                     <div class="popup__input-container">
                         <input id="userName-input" class="popup__input popup__input_type_name" type="text" placeholder="Ваше имя" name="userName" required minlength="2" maxlength="20">
-                        <span class="form__input-error userName-input-error"></span> 
+                        <span class="form__input-error" id ="userName-input-error"></span> 
                     </div>
                     <div class="popup__input-container">
                         <input id ="userJob-input" class="popup__input popup__input_type_job" type="text" placeholder="О себе" name="userJob" required minlength="2" maxlength="200">
-                        <span class="form__input-error userJob-input-error"></span>   
+                        <span class="form__input-error" id="userJob-input-error"></span>   
                     </div>
                     <button class="popup__save-btn" type="submit">Сохранить</button>
                 </form>
@@ -68,11 +68,11 @@
                 <form class="popup__form popup__form_type_card" name="userInfo" novalidate>
                     <div class="popup__input-container">
                         <input id="placeName-input" class="popup__input popup__input_type_placeName" type="text" placeholder="Название" name="placeName" required minlength="2" maxlength="30">
-                        <span class="form__input-error placeName-input-error"></span>
+                        <span class="form__input-error" id="placeName-input-error"></span>
                     </div>
                     <div class="popup__input-container">
                         <input id="placeLink-input" class="popup__input popup__input_type_link" type="url" placeholder="Ссылка на картинку" name="placeLink" required>
-                        <span class="form__input-error placeLink-input-error"></span>    
+                        <span class="form__input-error" id="placeLink-input-error"></span>    
                     </div>
                     <button class="popup__save-btn" type="submit">Создать</button>
                 </form>
