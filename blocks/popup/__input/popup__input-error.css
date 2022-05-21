@@ -1,4 +1,4 @@
-.form__input-error {
+.popup__input-error {
     color: red;
     visibility: hidden;
     position: absolute;
@@ -9,6 +9,6 @@
     line-height: 1.25;
 }
 
-.form__input-error_active {
+.popup__input-error_active {
     visibility: visible;
 }
