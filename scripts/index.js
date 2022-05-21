@@ -42,7 +42,7 @@ const imagePopupCloseBtn = imagePopup.querySelector('.popup__close-btn');
 const popupEditBtn = document.querySelector('.profile__edit-btn');
 const popupAddBtn = document.querySelector('.profile__add-btn');
 
-const profileForm = document.querySelector('.popup__form');
+const profileForm = document.querySelector('.popup__form_type_profile');
 const nameInput = profileForm.querySelector('.popup__input_type_name');
 const jobInput = profileForm.querySelector('.popup__input_type_job');
 
@@ -56,9 +56,12 @@ const linkInput = document.querySelector('.popup__input_type_link');
 const elemetsList = document.querySelector('.elements__list');
 const cardTemplate = document.querySelector('#element-template').content;
 
+
+
 // функция открытия попапа
 function openPopup(popup) {
-  popup.classList.add('popup_is-opened')
+  popup.classList.add('popup_is-opened');
+
 }
 
 // функция закрытия попапа
@@ -107,12 +110,10 @@ function renderCard(link, place) {
   const card = createCard(link, place);
   elemetsList.prepend(card);
 }
-
 for (let i = 0; i < initialCards.length; i++) {
   const cardData = initialCards[i]
   renderCard(cardData.link, cardData.name)
   }
-
 
 //функция добавления новой карточки
 function addCardSubmit(evt) {
@@ -135,7 +136,6 @@ popupEditBtn.addEventListener('click', openEditProfile);
 popupAddBtn.addEventListener('click', () => openPopup(cardPopup));
 
 
-
 // закрытие попапа профайла кликом на крестик
 profilePopupCloseBtn.addEventListener('click', () => {
   closePopup(profilePopup);
@@ -149,8 +149,24 @@ imagePopupCloseBtn.addEventListener('click', () => {
   closePopup(imagePopup)
 });
 
+// закрытие попапов клавишей Esc
+const popupCloseByEscpe = (evt) => {
+  const popup = document.querySelector('.popup_is-opened'); 
+  if (evt.key === 'Escape') {
+    closePopup(popup)
+  }
+};
+popups.forEach(() => {
+  document.addEventListener('keydown', popupCloseByEscpe)
+});
 
-
-
-
-
+// закрытие попапов кликом в оверлей
+const popupCloseByOveplay = (evt) => {
+  const popup = document.querySelector('.popup_is-opened'); 
+  if (evt.target === evt.currentTarget) {
+    closePopup(popup)
+  }
+};
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', popupCloseByOveplay)
+});
